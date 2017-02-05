@@ -23,6 +23,10 @@
 import UIKit
 import Hero
 
+func + (left: CGPoint, right: CGPoint) -> CGPoint {
+  return CGPoint(x: left.x + right.x, y: left.y + right.y)
+}
+
 class SecondViewController: UIViewController {
   var city:City?
 
@@ -61,6 +65,11 @@ class SecondViewController: UIViewController {
       let translation = panGR.translation(in: nil)
       let progress = translation.y / 2 / view.bounds.height
       Hero.shared.update(progress: Double(progress))
+
+      // update views' position
+      Hero.shared.apply(modifiers: [.position(translation + imageView.center)], to: imageView)
+      Hero.shared.apply(modifiers: [.position(translation + nameLabel.center)], to: nameLabel)
+      Hero.shared.apply(modifiers: [.position(translation + descriptionLabel.center)], to: descriptionLabel)
     default:
       // end the transition when user ended their touch
       Hero.shared.end()
