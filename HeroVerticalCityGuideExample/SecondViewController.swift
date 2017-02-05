@@ -66,10 +66,10 @@ class SecondViewController: UIViewController {
       let progress = translation.y / 2 / view.bounds.height
       Hero.shared.update(progress: Double(progress))
 
-      // update views' position
-      Hero.shared.apply(modifiers: [.position(translation + imageView.center)], to: imageView)
-      Hero.shared.apply(modifiers: [.position(translation + nameLabel.center)], to: nameLabel)
-      Hero.shared.apply(modifiers: [.position(translation + descriptionLabel.center)], to: descriptionLabel)
+      // update views' position (limited to only vertical scroll)
+      Hero.shared.apply(modifiers: [.position(CGPoint(x:imageView.center.x, y:translation.y + imageView.center.y))], to: imageView)
+      Hero.shared.apply(modifiers: [.position(CGPoint(x:nameLabel.center.x, y:translation.y + nameLabel.center.y))], to: nameLabel)
+      Hero.shared.apply(modifiers: [.position(CGPoint(x:descriptionLabel.center.x, y:translation.y + descriptionLabel.center.y))], to: descriptionLabel)
     default:
       // end the transition when user ended their touch
       Hero.shared.end()
