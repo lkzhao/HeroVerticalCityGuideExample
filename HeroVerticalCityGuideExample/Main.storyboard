@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tnf-dk-9EF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First View Controller-->
+        <scene sceneID="h9p-gh-5mz">
+            <objects>
+                <viewController id="Tnf-dk-9EF" customClass="FirstViewController" customModule="HeroVerticalCityGuideExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w8v-n5-3mO"/>
+                        <viewControllerLayoutGuide type="bottom" id="NvN-jP-Psy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kJb-V7-Onr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bV4-y8-FY0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="J1P-a4-Tc1">
+                                    <size key="itemSize" width="375" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="item" id="1jz-4R-leo" customClass="CityCell" customModule="HeroVerticalCityGuideExample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyW-Uk-FDt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBl-3a-4YU">
+                                                    <rect key="frame" x="24" y="124" width="94" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivO-PK-Dvc">
+                                                    <rect key="frame" x="24" y="157" width="65" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.97638529539999996" green="0.97652524709999999" blue="0.97635465860000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="QyW-Uk-FDt" firstAttribute="leading" secondItem="1jz-4R-leo" secondAttribute="leading" id="2Hd-tp-Bbe"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="ivO-PK-Dvc" secondAttribute="bottom" constant="20" id="4b2-yM-aUa"/>
+                                            <constraint firstAttribute="bottom" secondItem="QyW-Uk-FDt" secondAttribute="bottom" id="CPW-nK-rEN"/>
+                                            <constraint firstItem="QyW-Uk-FDt" firstAttribute="top" secondItem="1jz-4R-leo" secondAttribute="top" id="Oqi-md-8cC"/>
+                                            <constraint firstItem="xBl-3a-4YU" firstAttribute="leading" secondItem="1jz-4R-leo" secondAttribute="leadingMargin" constant="16" id="eVY-1Q-OWl"/>
+                                            <constraint firstAttribute="trailing" secondItem="QyW-Uk-FDt" secondAttribute="trailing" id="gCs-ge-oFc"/>
+                                            <constraint firstItem="ivO-PK-Dvc" firstAttribute="leading" secondItem="1jz-4R-leo" secondAttribute="leadingMargin" constant="16" id="jHZ-RC-fgv"/>
+                                            <constraint firstItem="ivO-PK-Dvc" firstAttribute="top" secondItem="xBl-3a-4YU" secondAttribute="bottom" constant="9" id="yGL-dj-G8M"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="ivO-PK-Dvc" id="dZD-3N-QFk"/>
+                                            <outlet property="imageView" destination="QyW-Uk-FDt" id="r5x-gL-3zV"/>
+                                            <outlet property="nameLabel" destination="xBl-3a-4YU" id="Hjs-pD-fX7"/>
+                                            <segue destination="zqh-r4-Svz" kind="presentation" id="S1k-xy-pA0">
+                                                <segue key="commit" inheritsFrom="parent" id="Eza-Eu-jqY"/>
+                                                <segue key="preview" inheritsFrom="commit" id="gQ9-ti-tgW"/>
+                                            </segue>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tnf-dk-9EF" id="Dft-dI-eGs"/>
+                                    <outlet property="delegate" destination="Tnf-dk-9EF" id="GRM-bK-W0x"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="NvN-jP-Psy" firstAttribute="top" secondItem="bV4-y8-FY0" secondAttribute="bottom" id="JVG-zd-HzG"/>
+                            <constraint firstItem="bV4-y8-FY0" firstAttribute="leading" secondItem="kJb-V7-Onr" secondAttribute="leading" id="Tv9-lC-aoE"/>
+                            <constraint firstItem="bV4-y8-FY0" firstAttribute="top" secondItem="kJb-V7-Onr" secondAttribute="top" id="aQ3-Sl-Pqa"/>
+                            <constraint firstAttribute="trailing" secondItem="bV4-y8-FY0" secondAttribute="trailing" id="bGs-sx-VfY"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cityBackground"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="collectionView" destination="bV4-y8-FY0" id="dEe-8j-cbG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RHl-8a-4vU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-0.80000000000000004" y="-0.44977511244377816"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="fwz-Du-JHU">
+            <objects>
+                <viewController id="zqh-r4-Svz" customClass="SecondViewController" customModule="HeroVerticalCityGuideExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MEI-89-uDD"/>
+                        <viewControllerLayoutGuide type="bottom" id="zYL-Sh-0i5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Z5-Vo-FmQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oOO-ar-dfh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8c-oW-Hod">
+                                <rect key="frame" x="24" y="323" width="327" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97638529539999996" green="0.97652524709999999" blue="0.97635465860000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le7-Nx-g3z">
+                                <rect key="frame" x="4" y="28" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="715-xC-m7h"/>
+                                    <constraint firstAttribute="width" constant="48" id="o3v-HC-bwD"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="ic_keyboard_arrow_down"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade translate(0, -150)  zPosition(20) useGlobalCoordinateSpace"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="back"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="hero_dismissViewController" destination="Q5l-99-eDb" eventType="touchUpInside" id="GXK-ZH-2kP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsu-p5-jev">
+                                <rect key="frame" x="24" y="278" width="144" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rsu-p5-jev" firstAttribute="leading" secondItem="7Z5-Vo-FmQ" secondAttribute="leadingMargin" constant="8" id="7l9-le-OSk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q8c-oW-Hod" secondAttribute="trailing" constant="8" id="Nxt-AY-I1g"/>
+                            <constraint firstItem="oOO-ar-dfh" firstAttribute="top" secondItem="7Z5-Vo-FmQ" secondAttribute="top" id="R4v-0l-OSL"/>
+                            <constraint firstItem="le7-Nx-g3z" firstAttribute="top" secondItem="MEI-89-uDD" secondAttribute="bottom" constant="8" id="adb-Ob-3u7"/>
+                            <constraint firstItem="rsu-p5-jev" firstAttribute="centerY" secondItem="7Z5-Vo-FmQ" secondAttribute="centerY" constant="-37" id="aiw-Hh-dZE"/>
+                            <constraint firstAttribute="trailing" secondItem="oOO-ar-dfh" secondAttribute="trailing" id="eQ4-Lb-PNE"/>
+                            <constraint firstAttribute="bottom" secondItem="oOO-ar-dfh" secondAttribute="bottom" id="hef-KN-Gjh"/>
+                            <constraint firstItem="oOO-ar-dfh" firstAttribute="leading" secondItem="7Z5-Vo-FmQ" secondAttribute="leading" id="im3-aH-60p"/>
+                            <constraint firstItem="Q8c-oW-Hod" firstAttribute="top" secondItem="rsu-p5-jev" secondAttribute="bottom" constant="8" id="qkW-Hk-6Rz"/>
+                            <constraint firstItem="Q8c-oW-Hod" firstAttribute="leading" secondItem="7Z5-Vo-FmQ" secondAttribute="leadingMargin" constant="8" id="uJ5-es-qoo"/>
+                            <constraint firstItem="le7-Nx-g3z" firstAttribute="leading" secondItem="7Z5-Vo-FmQ" secondAttribute="leadingMargin" constant="-12" id="vDI-8Q-xJ7"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Q8c-oW-Hod" id="tNF-hD-YfF"/>
+                        <outlet property="imageView" destination="oOO-ar-dfh" id="BEH-oF-I8r"/>
+                        <outlet property="nameLabel" destination="rsu-p5-jev" id="32O-tH-px6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q5l-99-eDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799.20000000000005" y="-0.44977511244377816"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_keyboard_arrow_down" width="24" height="24"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gQ9-ti-tgW"/>
+    </inferredMetricsTieBreakers>
+</document>

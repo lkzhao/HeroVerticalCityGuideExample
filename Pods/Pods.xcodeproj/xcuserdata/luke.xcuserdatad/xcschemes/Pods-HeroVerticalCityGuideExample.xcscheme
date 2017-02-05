@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A34C395E1E47A7FB00EE6CB4"
-               BuildableName = "HeroVerticalCityGuideExample.app"
-               BlueprintName = "HeroVerticalCityGuideExample"
-               ReferencedContainer = "container:HeroVerticalCityGuideExample.xcodeproj">
+               BlueprintIdentifier = "24CD55598554C5267F50AE43DA5E62ED"
+               BuildableName = "Pods_HeroVerticalCityGuideExample.framework"
+               BlueprintName = "Pods-HeroVerticalCityGuideExample"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A34C395E1E47A7FB00EE6CB4"
-            BuildableName = "HeroVerticalCityGuideExample.app"
-            BlueprintName = "HeroVerticalCityGuideExample"
-            ReferencedContainer = "container:HeroVerticalCityGuideExample.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A34C395E1E47A7FB00EE6CB4"
-            BuildableName = "HeroVerticalCityGuideExample.app"
-            BlueprintName = "HeroVerticalCityGuideExample"
-            ReferencedContainer = "container:HeroVerticalCityGuideExample.xcodeproj">
+            BlueprintIdentifier = "24CD55598554C5267F50AE43DA5E62ED"
+            BuildableName = "Pods_HeroVerticalCityGuideExample.framework"
+            BlueprintName = "Pods-HeroVerticalCityGuideExample"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A34C395E1E47A7FB00EE6CB4"
-            BuildableName = "HeroVerticalCityGuideExample.app"
-            BlueprintName = "HeroVerticalCityGuideExample"
-            ReferencedContainer = "container:HeroVerticalCityGuideExample.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
