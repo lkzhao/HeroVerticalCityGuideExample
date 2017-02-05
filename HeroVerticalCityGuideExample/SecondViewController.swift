@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import Hero
 
 class SecondViewController: UIViewController {
   var city:City?
@@ -29,6 +30,7 @@ class SecondViewController: UIViewController {
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
 
+  var panGR: UIPanGestureRecognizer!
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -43,6 +45,25 @@ class SecondViewController: UIViewController {
       descriptionLabel.heroID = "\(name)_description"
       descriptionLabel.heroModifiers = [.zPosition(4)]
       descriptionLabel.text = city.description
+    }
+
+    panGR = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gestureRecognizer:)))
+    view.addGestureRecognizer(panGR)
+  }
+
+  func handlePan(gestureRecognizer:UIPanGestureRecognizer) {
+    switch panGR.state {
+    case .began:
+      // begin the transition as normal
+      dismiss(animated: true, completion: nil)
+    case .changed:
+      // calculate the progress based on how far the user moved
+      let translation = panGR.translation(in: nil)
+      let progress = translation.y / 2 / view.bounds.height
+      Hero.shared.update(progress: Double(progress))
+    default:
+      // end the transition when user ended their touch
+      Hero.shared.end()
     }
   }
 }
