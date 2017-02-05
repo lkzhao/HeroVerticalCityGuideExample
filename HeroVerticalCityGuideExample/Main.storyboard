@@ -107,7 +107,7 @@
         <!--Second View Controller-->
         <scene sceneID="fwz-Du-JHU">
             <objects>
-                <viewController id="zqh-r4-Svz" customClass="SecondViewController" customModule="HeroVerticalCityGuideExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="second" id="zqh-r4-Svz" customClass="SecondViewController" customModule="HeroVerticalCityGuideExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MEI-89-uDD"/>
                         <viewControllerLayoutGuide type="bottom" id="zYL-Sh-0i5"/>

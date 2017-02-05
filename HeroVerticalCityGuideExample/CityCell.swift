@@ -31,18 +31,24 @@ class CityCell: UICollectionViewCell {
 
   var city: City? {
     didSet {
-      guard let city = city else { return }
-      let name = city.name
-
-      nameLabel.text = name
-      nameLabel.heroID = "\(name)_name"
-      nameLabel.heroModifiers = [.zPosition(4)]
-      imageView.image = city.image
-      imageView.heroID = "\(name)_image"
-      imageView.heroModifiers = [.zPosition(2)]
-      descriptionLabel.heroID = "\(name)_description"
-      descriptionLabel.heroModifiers = [.zPosition(4)]
-      descriptionLabel.text = city.shortDescription
+      reset()
     }
+  }
+
+  func reset(){
+    heroModifiers = nil
+
+    guard let city = city else { return }
+    let name = city.name
+
+    nameLabel.text = name
+    nameLabel.heroID = "\(name)_name"
+    nameLabel.heroModifiers = [.zPosition(4)]
+    imageView.image = city.image
+    imageView.heroID = "\(name)_image"
+    imageView.heroModifiers = [.zPosition(2)]
+    descriptionLabel.heroID = "\(name)_description"
+    descriptionLabel.heroModifiers = [.zPosition(4)]
+    descriptionLabel.text = city.shortDescription
   }
 }

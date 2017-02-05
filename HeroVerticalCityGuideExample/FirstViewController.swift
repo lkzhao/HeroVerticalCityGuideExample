@@ -32,6 +32,56 @@ class FirstViewController: UIViewController {
       vc.city = currentCell.city
     }
   }
+
+  var panGR: UIPanGestureRecognizer!
+  var slidingCell: CityCell?
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    panGR = UIPanGestureRecognizer(target: self, action: #selector(handlePan(gestureRecognizer:)))
+    view.addGestureRecognizer(panGR)
+  }
+
+  func handlePan(gestureRecognizer:UIPanGestureRecognizer) {
+    switch panGR.state {
+    case .began:
+      // begin the transition when sliding left
+      if panGR.velocity(in: nil).x < 0,
+         let indexPath = collectionView.indexPathForItem(at: panGR.location(in: collectionView)) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "second") as! SecondViewController
+        slidingCell = collectionView.cellForItem(at: indexPath) as! CityCell?
+        slidingCell!.imageView.heroID = nil
+        slidingCell!.nameLabel.heroID = nil
+        slidingCell!.descriptionLabel.heroID = nil
+        slidingCell!.heroModifiers = [.translate(x:-view.bounds.width)]
+
+        vc.city = cities[indexPath.item]
+        vc.view.heroModifiers = [.translate(x:view.bounds.width)]
+
+        // begin the transition as normal
+        present(vc, animated: true, completion: nil)
+      }
+    case .changed:
+      if let slidingCell = slidingCell, let toVC = Hero.shared.toViewController as? SecondViewController {
+        // calculate the progress based on how far the user moved
+        let translation = panGR.translation(in: nil)
+        let progress = -translation.x / view.bounds.width
+        Hero.shared.update(progress: Double(progress))
+
+        // update views' position (limited to only vertical scroll)
+        Hero.shared.apply(modifiers: [.translate(x:translation.x)], to: slidingCell)
+        Hero.shared.apply(modifiers: [.translate(x:translation.x + view.bounds.width)], to: toVC.view)
+      }
+    default:
+      if let slidingCell = slidingCell, let toVC = Hero.shared.toViewController as? SecondViewController {
+        slidingCell.reset() // reset heroModifers for the slidingCell
+        toVC.view.heroModifiers = nil
+
+        // end the transition when user ended their touch
+        Hero.shared.end()
+      }
+    }
+  }
 }
 
 extension FirstViewController:UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
