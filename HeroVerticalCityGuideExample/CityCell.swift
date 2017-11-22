@@ -43,12 +43,9 @@ class CityCell: UICollectionViewCell {
 
     nameLabel.text = name
     nameLabel.heroID = "\(name)_name"
-    nameLabel.heroModifiers = [.zPosition(4)]
     imageView.image = city.image
     imageView.heroID = "\(name)_image"
-    imageView.heroModifiers = [.zPosition(2)]
     descriptionLabel.heroID = "\(name)_description"
-    descriptionLabel.heroModifiers = [.zPosition(4)]
     descriptionLabel.text = city.shortDescription
   }
 }

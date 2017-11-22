@@ -68,7 +68,7 @@ class FirstViewController: UIViewController {
       }
     case .changed:
       if let slidingCell = slidingCell, let toVC = Hero.shared.toViewController as? SecondViewController {
-        Hero.shared.update(progress: Double(progress))
+        Hero.shared.update(progress)
 
         // update views' position (limited to only vertical scroll)
         let cellTranslationX = translation.x < -100 ? -100 : translation.x
@@ -85,7 +85,7 @@ class FirstViewController: UIViewController {
 
         // end or cancel the transition based on the progress and user's touch velocity
         if progress + -panGR.velocity(in: nil).x / view.bounds.width > 0.3 {
-          Hero.shared.end()
+          Hero.shared.finish()
         } else {
           Hero.shared.cancel()
         }

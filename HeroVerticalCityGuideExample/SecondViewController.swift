@@ -42,12 +42,9 @@ class SecondViewController: UIViewController {
       let name = city.name
       nameLabel.text = name
       nameLabel.heroID = "\(name)_name"
-      nameLabel.heroModifiers = [.zPosition(4)]
       imageView.image = city.image
       imageView.heroID = "\(name)_image"
-      imageView.heroModifiers = [.zPosition(2)]
       descriptionLabel.heroID = "\(name)_description"
-      descriptionLabel.heroModifiers = [.zPosition(4)]
       descriptionLabel.text = city.description
     }
 
@@ -65,7 +62,7 @@ class SecondViewController: UIViewController {
       // begin the transition as normal
       dismiss(animated: true, completion: nil)
     case .changed:
-      Hero.shared.update(progress: Double(progress))
+      Hero.shared.update(progress)
 
       // update views' position (limited to only vertical scroll)
       Hero.shared.apply(modifiers: [.position(CGPoint(x:imageView.center.x, y:translation.y + imageView.center.y))], to: imageView)
@@ -74,7 +71,7 @@ class SecondViewController: UIViewController {
     default:
       // end or cancel the transition based on the progress and user's touch velocity
       if progress + panGR.velocity(in: nil).y / view.bounds.height > 0.3 {
-        Hero.shared.end()
+        Hero.shared.finish()
       } else {
         Hero.shared.cancel()
       }
